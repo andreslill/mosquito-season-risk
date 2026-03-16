@@ -54,7 +54,7 @@ Risk Score (albopictus) = TempScore × VPDScore × PhotoFactor*
 ### Temperature suitability (TempScore)
 Triangular thermal curve: 0 at Tmin/Tmax, 1 at Topt, linear between.
 
-Parameters from Doeurk et al. 2025 (adult survival):
+Parameters from Doeurk et al. 2025 (female adult survival):
 
 | Species | Tmin (°C) | Topt (°C) | Tmax (°C) |
 |---|---|---|---|
