@@ -9,8 +9,6 @@
 
 A model of **climate-based suitability for mosquito activity** across 1,421 cities worldwide, covering two *Aedes* species and cities with populations ≥ 500,000. The central question: given a city's typical monthly climate, which months are most suitable for mosquito activity?
 
-Explore suitability by city, species, and season threshold. Designed as an interactive tool, not a static visualization.
-
 **Important:** Scores reflect *climate suitability*, not confirmed mosquito presence, disease risk, or actual population abundance. Microclimates, urban heat islands, elevation within cities, and local habitat availability are not captured.
 
 ---
