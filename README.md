@@ -19,7 +19,7 @@ Tableau Public link: https://public.tableau.com/app/profile/andr.s.lill8311/viz/
                      
                      
 **Views:**
-- **Risk Window (Heatmap)** — continuous suitability score (0–1) across 12 months for a selected city
+- **Suitability Window (Heatmap)** — continuous suitability score (0–1) across 12 months for a selected city
 - **Season Bar** — binary active/inactive months based on a user-defined threshold
 - **Compare Panel** — season length rank among all cities for the selected species and threshold
 
@@ -46,8 +46,8 @@ Tableau Public link: https://public.tableau.com/app/profile/andr.s.lill8311/viz/
 Suitability is a multiplicative score (0–1):
 
 ```
-Risk Score (aegypti)    = TempScore × VPDScore
-Risk Score (albopictus) = TempScore × VPDScore × PhotoFactor*
+Suitability Score (aegypti)    = TempScore × VPDScore
+Suitability Score (albopictus) = TempScore × VPDScore × PhotoFactor*
 
 *PhotoFactor applied only outside the tropics (|lat| ≥ 23.5°)
 ```
