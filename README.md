@@ -15,7 +15,7 @@ A model of **climate-based suitability for mosquito activity** across 1,421 citi
 
 ## Dashboard
 
-→ *Tableau Public link (to be added after publication)*
+Tableau Public link: https://public.tableau.com/app/profile/andr.s.lill8311/viz/When-is-mosquito-season-in-your-city/Dashboard?publish=yes
 
 **Views:**
 - **Risk Window (Heatmap)** — continuous suitability score (0–1) across 12 months for a selected city
