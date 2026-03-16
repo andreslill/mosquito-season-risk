@@ -22,13 +22,13 @@ Tableau Public dashboard: [When is mosquito season in your city?](https://public
 
 
 ## Views
-- **KPI: Season length** — number of months above the selected suitability threshold
-- **KPI: Peak month** — month with the highest suitability score for the selected city and species
-- **Season Bar** — binary active/inactive months based on a user-defined threshold
-- **Suitability Window (Heatmap)** — continuous suitability score (0–1) across 12 months
-- **Season Map** — world map showing which cities are in season for the selected month and species
-- **Cities at similar latitudes** — season length comparison with cities in the same latitude band
-- **Cities same country** — season length comparison with cities in the same country
+- **KPI: Season length**: Number of months above the selected suitability threshold
+- **KPI: Peak month**: Month with the highest suitability score for the selected city and species
+- **Season Bar**: Binary active/inactive months based on a user-defined threshold
+- **Suitability Window (Heatmap)**: Continuous suitability score (0–1) across 12 months
+- **Season Map**: World map showing which cities are in season for the selected month and species
+- **Cities at similar latitudes**: Season length comparison with cities in the same latitude band
+- **Cities same country**: Season length comparison with cities in the same country
 
 **Controls:**
 - City dropdown
