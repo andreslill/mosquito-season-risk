@@ -17,8 +17,7 @@ Which months are most suitable for mosquito activity, given a city's typical cli
 
 ## Dashboard
 
-Tableau Public dashboard: [When is mosquito season in your city?](https://public.tableau.com/app/profile/andr.s.lill8311/viz/Whenismosquitoseasoninyourcity/Dashboard?publish=yes)                     
-
+🔗 **[Tableau Public Dashboard](https://public.tableau.com/app/profile/andr.s.lill8311/viz/Whenismosquitoseasoninyourcity/Dashboard?publish=yes)**
 
 
 ## Views
