@@ -45,7 +45,10 @@ A model of **climate-based suitability for mosquito activity** across 1,421 citi
 Suitability is a multiplicative score (0–1):
 
 ```
-Risk Score = TempScore × VPDScore × PhotoFactor (albopictus only, temperate zones)
+Risk Score (aegypti)    = TempScore × VPDScore
+Risk Score (albopictus) = TempScore × VPDScore × PhotoFactor*
+
+*PhotoFactor applied only outside the tropics (|lat| ≥ 23.5°)
 ```
 
 ### Temperature suitability (TempScore)
