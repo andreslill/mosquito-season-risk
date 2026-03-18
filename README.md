@@ -111,7 +111,7 @@ Precipitation is included as contextual information only and does not contribute
 ## Repository Structure
 
 ```
-├── mosquito_suitability_pipeline.ipynb   # Main pipeline (Google Colab)
+├── mosquito_suitability_pipeline.ipynb   # ERA5 suitability pipeline
 ├── mosquito_suitability.csv              # Pre-computed dataset (1,421 cities × 12 months)
 ├── requirements.txt
 └── README.md
