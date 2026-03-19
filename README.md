@@ -107,7 +107,7 @@ Precipitation is included as contextual information only and does not contribute
 
 | Parameter | Source | Notes |
 |---|---|---|
-| Temperature suitability | Doeurk et al. 2025 | Adult survival curve |
+| Temperature suitability | Doeurk et al. 2025 | Female adult survival curve |
 | VPD linearization | Schmidt et al. 2018 | |
 | Photoperiod gate | Lacour et al. 2015 | Temperate *Ae. albopictus* populations |
 ---
