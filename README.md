@@ -177,7 +177,7 @@ across the continent (Simonin 2025).
 
 > Bonizzoni M, et al. The invasive mosquito species *Aedes albopictus*: current knowledge and future perspectives. *Trends Parasitol.* 2013; 29(9):460–468. https://doi.org/10.1016/j.pt.2013.07.003
 
-> Copernicus Climate Change Service, Climate Data Store, (2019): Climatic suitability for the presence and seasonal activity of the Aedes albopictus mosquito for Europe derived from climate projections. Copernicus Climate Change Service (C3S) Climate Data Store (CDS). https://10.24381/cds.d08ed09a 
+> Copernicus Climate Change Service, Climate Data Store, (2019): Climatic suitability for the presence and seasonal activity of the Aedes albopictus mosquito for Europe derived from climate projections. Copernicus Climate Change Service (C3S) Climate Data Store (CDS). https://doi.org/10.24381/cds.d08ed09a
 
 > Dávalos-Becerril E, Correa-Morales F, González-Acosta C, Santos-Luna R, Peralta-Rodríguez J, Pérez-Rentería C, et al. Urban and semi-urban mosquitoes of Mexico City: A risk for endemic mosquito-borne disease transmission. *PLOS ONE* 2019; 14(3): e0212987. https://doi.org/10.1371/journal.pone.0212987
 
