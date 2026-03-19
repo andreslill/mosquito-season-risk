@@ -70,10 +70,10 @@ Parameters from Doeurk et al. 2025 (female adult survival):
 | *Ae. aegypti* | 14.97 | 27.1 | 39.15 |
 | *Ae. albopictus* | 11.02 | 24.5 | 38.07 |
 
-### Desiccation stress (VPDScore)
-Linearized VPD suitability based on Schmidt et al. 2018:
-- VPD ≤ 1.0 kPa → score = 1.0
-- VPD ≥ 3.0 kPa → score = 0.0
+### Desiccation stress 
+Linearized vapour pressure deficit (VPD) suitability based on Schmidt et al. 2018:
+- VPD ≤ 1.0 kPa - score = 1.0
+- VPD ≥ 3.0 kPa - score = 0.0
 - Linear between
 
 VPD is derived from ERA5 temperature and dewpoint using the Magnus approximation.
@@ -85,6 +85,10 @@ Outside the tropics (Lacour et al. 2015):
 - Daylength < 11.25h → 0.0
 - 11.25–13.5h → 0.5
 - ≥ 13.5h → 1.0
+
+### Midsummer suitability dips (*Ae. albopictus*)
+
+In temperate cities, midsummer suitability for *Ae. albopictus* can drop below the season threshold even while temperatures remain high. This reflects two interacting processes: daylength falling below the diapause photoperiod threshold (≈ 13.5 h, Lacour et al. 2015) and increased desiccation stress under high VPD. Consequently, in some cities (e.g. Murcia, Athens or Damascus), September can show higher suitability than August, as slightly cooler temperatures nearer the temperature optimum (24.5°C) and recovering humidity together restore conditions above the season threshold.
 
 ### Precipitation
 Precipitation is included as contextual information only and does not contribute to the suitability score. The score is based on temperature suitability and vapour pressure deficit, with an additional photoperiod factor for *Ae. albopictus* outside the tropics.
