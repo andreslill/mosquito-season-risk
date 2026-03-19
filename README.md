@@ -166,6 +166,7 @@ across the continent (Simonin 2025).
 - **City size threshold:** Only cities with populations ≥ 500,000 are included. 
   Smaller cities with known vector presence, such as Madeira (*Ae. aegypti*), 
   are not represented.
+- **Suitability scores reflect climate conditions, not confirmed presence.** The model captures thermal and humidity constraints but cannot account for biotic factors such as prior establishment, competitive dynamics, or human-mediated introduction. At climate margins, these factors can decouple predicted suitability from observed reality. In Mexico City (~2,242 m), for example, the model predicts no suitability for *Ae. aegypti* (Tmin 15°C), yet the species persists up to 2,133 m through repeated human transport and urban microhabitats (Lozano-Fuentes et al. 2012; Dávalos-Becerril et al. 2019). Conversely, the model predicts moderate suitability for *Ae. albopictus* (Tmin 11°C), consistent with its first detection in 2017, though it remains rare and confined to warmer northern microclimates (Dávalos-Becerril et al. 2019; Ortega-Morales et al. 2022).
 - **Photoperiod (albopictus):** Currently applied as a temperate-only modifier. A finer latitude-based gradation could be explored.
 - **Presence data:** A future version could overlay occurrence records (e.g. Kraemer et al., Mosquito Alert) to distinguish climate suitability from confirmed presence.
 - **Cx. pipiens:** Excluded due to species-complex ambiguity in tropical regions. Could be added as a temperate-only layer in a future iteration.
@@ -174,17 +175,23 @@ across the continent (Simonin 2025).
 
 ## References
 
+> Bonizzoni M, et al. The invasive mosquito species *Aedes albopictus*: current knowledge and future perspectives. *Trends Parasitol.* 2013; 29(9):460–468. https://doi.org/10.1016/j.pt.2013.07.003
+> 
+> Dávalos-Becerril E, Correa-Morales F, González-Acosta C, Santos-Luna R, Peralta-Rodríguez J, Pérez-Rentería C, et al. Urban and semi-urban mosquitoes of Mexico City: A risk for endemic mosquito-borne disease transmission. *PLOS ONE* 2019; 14(3): e0212987. https://doi.org/10.1371/journal.pone.0212987
+
 > Doeurk S, et al. Impact of temperature on survival, development and longevity of *Ae. aegypti* and *Ae. albopictus*. *Parasites & Vectors* 2025; 18:362. https://doi.org/10.1186/s13071-025-06892-y
 
 > Schmidt CA, et al. Effects of desiccation stress on adult female longevity in *Ae. aegypti* and *Ae. albopictus*. *Parasites & Vectors* 2018; 11:267. https://doi.org/10.1186/s13071-018-2808-6
 
 > Lacour G, Chanaud L, L'Ambert G, Hance T. Seasonal Synchronization of Diapause Phases in *Aedes albopictus* (Diptera: Culicidae). *PLOS ONE* 2015; 10(12): e0145311. https://doi.org/10.1371/journal.pone.0145311
 
+> Lozano-Fuentes S, Hayden MH, Welsh-Rodriguez C, Ochoa-Martinez C, Tapia-Santos B, Kobylinski KC, et al. The dengue virus mosquito vector *Aedes aegypti* at high elevation in México. *American Journal of Tropical Medicine and Hygiene* 2012; 87(5):902–909. https://doi.org/10.4269/ajtmh.2012.12-0244
+
 > Medlock JM, Avenell D, Barrass I, Leach S. Analysis of the potential for survival and seasonal activity of *Aedes albopictus* (Diptera: Culicidae) in the United Kingdom. *Journal of Vector Ecology* 2006; 31(2):292–304. https://doi.org/10.3376/1081-1710(2006)31[292:AOTPFS]2.0.CO;2
 
 > Mordecai EA, Cohen JM, Evans MV, et al. Detecting the impact of temperature on transmission of Zika, dengue, and chikungunya using mechanistic models. *PLOS Neglected Tropical Diseases* 2017; 11(4): e0005568. https://doi.org/10.1371/journal.pntd.0005568
 
-> Bonizzoni M, et al. The invasive mosquito species *Aedes albopictus*: current knowledge and future perspectives. *Trends Parasitol.* 2013; 29(9):460–468. https://doi.org/10.1016/j.pt.2013.07.003
+> Ortega-Morales AI, Pérez-Rentería C, Ordóñez-Álvarez J, Salazar JA, Dzul-Manzanilla F, Correa-Morales F, Huerta-Jiménez H. Update on the dispersal of *Aedes albopictus* in Mexico: 1988–2021. *Frontiers in Tropical Diseases* 2022; 2:814205. https://doi.org/10.3389/fitd.2021.814205
 
 > Simonin Y. Europe Faces Multiple Arboviral Threats in 2025. *Viruses* 2025; 17:1642. https://doi.org/10.3390/v17121642
 
