@@ -199,17 +199,13 @@ across the continent (Simonin 2025).
 
 >Ortega-Morales AI, et al. Update on the dispersal of Aedes albopictus in Mexico: 1988–2021. Frontiers in Tropical Diseases 2022; 2:814205. https://doi.org/10.3389/fitd.2021.814205
 
+>Schmidt CA, et al. Effects of desiccation stress on adult female longevity in Ae. aegypti and Ae. albopictus. Parasites & Vectors 2018; 11:267. https://doi.org/10.1186/s13071-018-2808-6
 
-Schmidt CA, et al. Effects of desiccation stress on adult female longevity in Ae. aegypti and Ae. albopictus. Parasites & Vectors 2018; 11:267. https://doi.org/10.1186/s13071-018-2808-6
+>Sebastianelli A, et al. A reproducible ensemble machine learning approach to forecast dengue outbreaks. Scientific Reports 2024; 14:3807. https://doi.org/10.1038/s41598-024-52796-9
 
+>Simonin Y. Europe Faces Multiple Arboviral Threats in 2025. Viruses 2025; 17:1642. https://doi.org/10.3390/v17121642
 
-Sebastianelli A, et al. A reproducible ensemble machine learning approach to forecast dengue outbreaks. Scientific Reports 2024; 14:3807. https://doi.org/10.1038/s41598-024-52796-9
-
-
-Simonin Y. Europe Faces Multiple Arboviral Threats in 2025. Viruses 2025; 17:1642. https://doi.org/10.3390/v17121642
-
-
-Tegar S, et al. Temperature-sensitive incubation, transmissibility and risk of Aedes albopictus-borne chikungunya virus in Europe. J. R. Soc. Interface 2026; 23:20250707. https://doi.org/10.1098/rsif.2025.0707
+>Tegar S, et al. Temperature-sensitive incubation, transmissibility and risk of Aedes albopictus-borne chikungunya virus in Europe. J. R. Soc. Interface 2026; 23:20250707. https://doi.org/10.1098/rsif.2025.0707
 
 
 ---
