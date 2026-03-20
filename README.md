@@ -81,7 +81,7 @@ VPD is derived from ERA5 temperature and dewpoint using the Magnus approximation
 ### Photoperiod (PhotoFactor — *Ae. albopictus* only)
 Applied **only outside the tropics (|lat| ≥ 23.5°)** as a proxy for diapause pressure. In tropical/subtropical latitudes, daylength is less seasonal and diapause is not a dominant driver, so PhotoFactor = 1.0 there.
 
-Outside the tropics (Lacour et al. 2015):
+Outside the tropics (Lacour et al. 2015; Medlock et al. 2006):
 - Daylength < 11.25h → 0.0
 - 11.25–13.5h → 0.5
 - ≥ 13.5h → 1.0
@@ -107,9 +107,9 @@ Precipitation is included as contextual information only and does not contribute
 
 | Parameter | Source | Notes |
 |---|---|---|
-| Temperature suitability | Doeurk et al. 2025 | Adult survival curve |
+| Temperature suitability | Doeurk et al. 2025 | Female adult survival curve |
 | VPD linearization | Schmidt et al. 2018 | |
-| Photoperiod gate | Lacour et al. 2015 | Temperate *Ae. albopictus* populations |
+| Photoperiod gate | Lacour et al. 2015; Medlock et al. 2006 | Temperate *Ae. albopictus* populations |
 ---
 
 ## Repository Structure
@@ -147,7 +147,7 @@ Notably, Tegar et al. estimate a minimum cut-off temperature for CHIKV transmiss
 
 One limitation worth noting: the temperature optimum used here (Topt = 24.5°C) is derived from *female survival* in Doeurk et al. 2025, a single life-history trait. Tegar et al. find an optimum for CHIKV transmission of 25.63°C, integrating multiple traits (EIP, vector competence, biting rate, survival) into a full R₀ model. Doeurk et al. also report that blood-feeding rates in *Ae. albopictus* peak at 25°C, slightly above the survival optimum. This suggests the suitability curve used here may be marginally conservative around the peak, as it does not integrate biting rate or transmission competence. A multi-trait Topt closer to 25–26°C could be more appropriate for a transmission-oriented model.
 
-The photoperiod thresholds used here are independently corroborated by the Copernicus Climate Change Service (C3S) dataset on climatic suitability for *Ae. albopictus* in Europe (Hooyberghs et al., VITO; published via CDS, DOI: 10.24381/cds.d08ed09a). That dataset implements the seasonal activity model of Medlock et al. (2006), which defines egg hatching in spring as requiring photoperiod > 11.25h and autumn diapause onset when photoperiod drops below 13.5h, identical to the `PHOTO_LOW` and `PHOTO_HIGH` thresholds applied here. Both thresholds originate from Lacour et al. (2015), who established the critical photoperiod (CPP) for diapause induction in a French Mediterranean *Ae. albopictus* population at 13.5h, and identified 11.25h as the minimum photoperiod required for spring egg hatching onset. The C3S model is restricted to Europe and based on climate projections (RCP4.5/8.5). Here we extend a comparable approach globally using ERA5 historical climate normals. This treatment of daylength as a seasonal constraint on activity outside the tropics is further supported by Bonizzoni et al. (2013), who document rapid adaptive evolution of critical photoperiod in temperate Ae. albopictus populations as a key driver of the species' range expansion into higher latitudes.
+The photoperiod thresholds used here are independently corroborated by the Copernicus Climate Change Service (C3S) dataset on climatic suitability for *Ae. albopictus* in Europe (C3S, 2019). That dataset implements the seasonal activity model of Medlock et al. (2006), which defines egg hatching in spring as requiring photoperiod > 11.25h and autumn diapause onset when photoperiod drops below 13.5h, identical to the `PHOTO_LOW` and `PHOTO_HIGH` thresholds applied here. Both thresholds originate from Lacour et al. (2015), who established the critical photoperiod (CPP) for diapause induction in a French Mediterranean *Ae. albopictus* population at 13.5h, and identified 11.25h as the minimum photoperiod required for spring egg hatching onset. The C3S model is restricted to Europe and based on climate projections (RCP4.5/8.5). Here we extend a comparable approach globally using ERA5 historical climate normals. This treatment of daylength as a seasonal constraint on activity outside the tropics is further supported by Bonizzoni et al. (2013), who document rapid adaptive evolution of critical photoperiod in temperate Ae. albopictus populations as a key driver of the species' range expansion into higher latitudes.
 
 ## Confirmed distribution in Europe
 
@@ -166,8 +166,8 @@ across the continent (Simonin 2025).
 - **City size threshold:** Only cities with populations ≥ 500,000 are included. 
   Smaller cities with known vector presence, such as Madeira (*Ae. aegypti*), 
   are not represented.
-- **Suitability scores reflect climate conditions, not confirmed presence.** Thermal and humidity constraints are captured, but biotic factors such as prior establishment, competitive dynamics, or human-mediated introduction are not. At the cool edges of species' ranges, observed presence can diverge substantially from climate predictions, **as documented for example** in Mexico City (~2,242 m), where *Ae. aegypti* persists despite conditions near its thermal minimum (Doeurk et al. 2025; Lozano-Fuentes et al. 2012; Dávalos-Becerril et al. 2019; Ortega-Morales et al. 2022).
-- **Photoperiod (albopictus):** Currently applied as a temperate-only modifier. A finer latitude-based gradation could be explored.
+- **Suitability scores reflect climate conditions, not confirmed presence.** Thermal and humidity constraints are captured, but biotic factors such as prior establishment, competitive dynamics, or human-mediated introduction are not. Where temperatures approach the lower thermal threshold, occurrence records can diverge substantially from climate predictions, as documented for example in Mexico City (~2,242 m), where *Ae. aegypti* persists despite conditions near its thermal minimum (Doeurk et al. 2025; Lozano-Fuentes et al. 2012; Dávalos-Becerril et al. 2019; Ortega-Morales et al. 2022).
+- **Photoperiod (albopictus):** A binary cutoff at |lat| ≥ 23.5° currently separates tropical from temperate photoperiod conditions. A continuous gradation based on latitude could better capture the transition zone between the two.
 - **Presence data:** A future version could overlay occurrence records (e.g. Kraemer et al., Mosquito Alert) to distinguish climate suitability from confirmed presence.
 - **Cx. pipiens:** Excluded due to species-complex ambiguity in tropical regions. Could be added as a temperate-only layer in a future iteration.
 - **Virus-specific transmission modelling:** This work models general climate suitability for mosquito activity. A natural extension would be to incorporate virus-specific temperature–trait relationships (EIP, vector competence) to estimate transmission risk for specific arboviruses — as demonstrated for CHIKV by Tegar et al. (2026) and for dengue/Zika by Mordecai et al. (2017).
@@ -176,12 +176,14 @@ across the continent (Simonin 2025).
 ## References
 
 > Bonizzoni M, et al. The invasive mosquito species *Aedes albopictus*: current knowledge and future perspectives. *Trends Parasitol.* 2013; 29(9):460–468. https://doi.org/10.1016/j.pt.2013.07.003
-> 
+
+> Copernicus Climate Change Service, Climate Data Store, (2019): Climatic suitability for the presence and seasonal activity of the Aedes albopictus mosquito for Europe derived from climate projections. Copernicus Climate Change Service (C3S) Climate Data Store (CDS). https://doi.org/10.24381/cds.d08ed09a
+
 > Dávalos-Becerril E, Correa-Morales F, González-Acosta C, Santos-Luna R, Peralta-Rodríguez J, Pérez-Rentería C, et al. Urban and semi-urban mosquitoes of Mexico City: A risk for endemic mosquito-borne disease transmission. *PLOS ONE* 2019; 14(3): e0212987. https://doi.org/10.1371/journal.pone.0212987
 
 > Doeurk S, et al. Impact of temperature on survival, development and longevity of *Ae. aegypti* and *Ae. albopictus*. *Parasites & Vectors* 2025; 18:362. https://doi.org/10.1186/s13071-025-06892-y
 
-> Schmidt CA, et al. Effects of desiccation stress on adult female longevity in *Ae. aegypti* and *Ae. albopictus*. *Parasites & Vectors* 2018; 11:267. https://doi.org/10.1186/s13071-018-2808-6
+> Kraemer MUG, Sinka ME, Duda KA, et al. The global compendium of *Aedes aegypti* and *Ae. albopictus* occurrence. *Sci Data* 2015; 2:150035. https://doi.org/10.1038/sdata.2015.35
 
 > Lacour G, Chanaud L, L'Ambert G, Hance T. Seasonal Synchronization of Diapause Phases in *Aedes albopictus* (Diptera: Culicidae). *PLOS ONE* 2015; 10(12): e0145311. https://doi.org/10.1371/journal.pone.0145311
 
@@ -193,13 +195,13 @@ across the continent (Simonin 2025).
 
 > Ortega-Morales AI, Pérez-Rentería C, Ordóñez-Álvarez J, Salazar JA, Dzul-Manzanilla F, Correa-Morales F, Huerta-Jiménez H. Update on the dispersal of *Aedes albopictus* in Mexico: 1988–2021. *Frontiers in Tropical Diseases* 2022; 2:814205. https://doi.org/10.3389/fitd.2021.814205
 
+> Schmidt CA, et al. Effects of desiccation stress on adult female longevity in *Ae. aegypti* and *Ae. albopictus*. *Parasites & Vectors* 2018; 11:267. https://doi.org/10.1186/s13071-018-2808-6
+
 > Simonin Y. Europe Faces Multiple Arboviral Threats in 2025. *Viruses* 2025; 17:1642. https://doi.org/10.3390/v17121642
 
 > Sebastianelli A, Spiller D, Carmo R, et al. A reproducible ensemble machine learning approach to forecast dengue outbreaks. *Scientific Reports* 2024; 14:3807. https://doi.org/10.1038/s41598-024-52796-9
 
 > Tegar S, Brass DP, Purse BV, Cobbold CA, White SM. Temperature-sensitive incubation, transmissibility and risk of *Aedes albopictus*-borne chikungunya virus in Europe. *J. R. Soc. Interface* 2026; 23:20250707. https://doi.org/10.1098/rsif.2025.0707
-
-> Hooyberghs H, et al. Climatic suitability for *Ae. albopictus* in Europe. Copernicus Climate Change Service (C3S), 2019. https://doi.org/10.24381/cds.d08ed09a
 
 
 ---
