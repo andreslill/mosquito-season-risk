@@ -40,7 +40,7 @@ Which months are most suitable for mosquito activity, given a city's typical cli
 
 ## Species
 
-*Ae. aegypti* and *Ae. albopictus* are the most epidemiologically important mosquito vectors of human arboviral diseases globally (Mordecai et al. 2017). Together, they drive transmission of dengue, Zika, chikungunya (CHIKV), and urban yellow fever across tropical, subtropical, and increasingly temperate regions. *Ae. albopictus*, in particular, has expanded rapidly into Europe over recent decades (Bonizzoni et al. 2013; Simonin 2025), making seasonal suitability modelling increasingly relevant for public health planning in previously low-risk regions.
+*Ae. aegypti* and *Ae. albopictus* are the most epidemiologically important mosquito vectors of human arboviral diseases globally (Mordecai et al. 2017). Together, they drive transmission of dengue, Zika, chikungunya (CHIKV), and urban yellow fever across tropical, subtropical, and increasingly temperate regions. *Ae. albopictus*, in particular, has expanded rapidly into Europe over recent decades (Bonizzoni et al. 2013; Simonin 2025), with climate projections suggesting further northward expansion by mid-century (Laporta et al. 2023), making seasonal suitability modelling increasingly relevant for public health planning in previously low-risk regions.
 
 | Species | Notes |
 |---|---|
@@ -171,7 +171,7 @@ across the continent (Simonin 2025).
 - **Spatial resolution:** Suitability is modelled for individual cities, not across continuous space. This makes exposed-population estimates methodologically unsound at the city level. Meaningful exposure analysis would require gridded population data (e.g. GHS-POP) combined with spatially continuous suitability fields, which lies beyond the scope of the current dataset.
 - **Suitability scores reflect climate conditions, not confirmed presence.** Thermal and humidity constraints are captured, but biotic factors such as prior establishment, competitive dynamics, or human-mediated introduction are not. Where temperatures approach the lower thermal threshold, occurrence records can diverge substantially from climate predictions, as documented for example in Mexico City (~2,242 m), where *Ae. aegypti* persists despite conditions near its thermal minimum (Doeurk et al. 2025; Lozano-Fuentes et al. 2012; Dávalos-Becerril et al. 2019; Ortega-Morales et al. 2022).
 - **Photoperiod (albopictus):** A binary cutoff at |lat| ≥ 23.5° currently separates tropical from temperate photoperiod conditions. A continuous gradation based on latitude could better capture the transition zone between the two.
-- **Presence data:** A future version could overlay occurrence records (e.g. Kraemer et al., Mosquito Alert) to distinguish climate suitability from confirmed presence.
+- **Presence data:** A future version could overlay occurrence records from sources such as Kraemer et al. 2015, the Mosquito Alert citizen science platform, or the VectorMap database (Laporta et al. 2023) to distinguish climate suitability from confirmed presence.
 - **Virus-specific transmission modelling:** This work models general climate suitability for mosquito activity. A natural extension would be to incorporate virus-specific temperature–trait relationships (EIP, vector competence) to estimate transmission risk for specific arboviruses, as demonstrated for CHIKV by Tegar et al. (2026) and for dengue/Zika by Mordecai et al. (2017).
 - **From suitability to outbreak forecasting:** A further extension would integrate confirmed case data to build a predictive layer on top of suitability scores, an approach demonstrated at country level by Sebastianelli et al. (2024) for dengue in Brazil and Peru ([ESA-PhiLab/ESA-UNICEF_DengueForecastProject](https://github.com/ESA-PhiLab/ESA-UNICEF_DengueForecastProject)).
 
@@ -188,6 +188,8 @@ across the continent (Simonin 2025).
 > Kraemer MUG, Sinka ME, Duda KA, et al. The global compendium of *Aedes aegypti* and *Ae. albopictus* occurrence. *Sci Data* 2015; 2:150035. https://doi.org/10.1038/sdata.2015.35
 
 > Lacour G, Chanaud L, L'Ambert G, Hance T. Seasonal Synchronization of Diapause Phases in *Aedes albopictus* (Diptera: Culicidae). *PLOS ONE* 2015; 10(12): e0145311. https://doi.org/10.1371/journal.pone.0145311
+
+>Laporta GZ, Potter AM, Oliveira JFA, Bourke BP, Pecor DB, Linton Y-M. Global Distribution of *Aedes aegypti* and *aedes albopictus*in a Climate Change Scenario of Regional Rivalry. Insects 2023; 14:49. https://doi.org/10.3390/insects14010049
 
 > Lozano-Fuentes S, Hayden MH, Welsh-Rodriguez C, Ochoa-Martinez C, Tapia-Santos B, Kobylinski KC, et al. The dengue virus mosquito vector *Aedes aegypti* at high elevation in México. *American Journal of Tropical Medicine and Hygiene* 2012; 87(5):902–909. https://doi.org/10.4269/ajtmh.2012.12-0244
 
