@@ -115,8 +115,12 @@ Precipitation is included as contextual information only and does not contribute
 ## Repository Structure
 
 ```
-├── mosquito_suitability_pipeline.ipynb   # ERA5 suitability pipeline
-├── mosquito_suitability.csv              # Pre-computed dataset (1,421 cities × 12 months)
+├── data/
+│   └── mosquito_suitability.csv          # Pre-computed dataset (1,421 cities × 12 months)
+├── notebooks/
+│   ├── mosquito_suitability_pipeline.ipynb   # ERA5 data pipeline and suitability model
+│   └── methodology_and_validation.ipynb           # External validation against Kraemer et al. 2015
+├── .gitattributes
 ├── requirements.txt
 └── README.md
 ```
@@ -149,6 +153,35 @@ Notably, Tegar et al. estimate a minimum cut-off temperature for CHIKV transmiss
 
 One limitation worth noting: the temperature optimum used here (Topt = 24.5°C) is derived from *female survival* in Doeurk et al. 2025, a single life-history trait. Tegar et al. find an optimum for CHIKV transmission of 25.63°C, integrating multiple traits (EIP, vector competence, biting rate, survival) into a full R₀ model. Doeurk et al. also report that blood-feeding rates in *Ae. albopictus* peak at 25°C, slightly above the survival optimum. This suggests the suitability curve used here may be marginally conservative around the peak, as it does not integrate biting rate or transmission competence. A multi-trait Topt closer to 25–26°C could be more appropriate for a transmission-oriented model.
 
+### External validation against Kraemer et al. occurrence records
+
+To test whether the suitability model assigns higher scores to cities with confirmed mosquito presence, suitability metrics were compared against geo-positioned occurrence records from Kraemer et al. 2015/2017 — a global compendium of 42,066 *Ae. aegypti* and *Ae. albopictus* records compiled from peer-reviewed literature and national entomological surveys between 1958 and 2014.
+
+For each of the 1,421 cities, a presence label was assigned if any Kraemer point record fell within 50 km (point records only; polygon centroids excluded). Three city-level metrics were compared between presence-labelled and absence-labelled cities: peak monthly suitability, season length at three thresholds (≥ 0.2, ≥ 0.3, ≥ 0.4 — matching the dashboard filter options), and mean suitability across active months.
+
+**Results (50 km radius, point records only):**
+
+| Species | Metric | Presence median | Absence-labelled median | AUC |
+|---|---|---|---|---|
+| *Ae. aegypti* | Season length (≥ 0.2) | 12 months | 6 months | **0.834** |
+| *Ae. aegypti* | Season length (≥ 0.3) | 12 months | 5 months | 0.827 |
+| *Ae. aegypti* | Season length (≥ 0.4) | 12 months | 5 months | 0.815 |
+| *Ae. aegypti* | Mean active score | 0.758 | 0.627 | 0.715 |
+| *Ae. aegypti* | Peak score | 0.970 | 0.873 | 0.688 |
+| *Ae. albopictus* | Season length (≥ 0.2) | 12 months | 6 months | **0.749** |
+| *Ae. albopictus* | Season length (≥ 0.4) | 12 months | 4 months | 0.737 |
+| *Ae. albopictus* | Season length (≥ 0.3) | 12 months | 5 months | 0.724 |
+| *Ae. albopictus* | Mean active score | 0.734 | 0.589 | 0.682 |
+| *Ae. albopictus* | Peak score | 0.941 | 0.867 | 0.660 |
+
+All Mann-Whitney U tests: p < 0.001 (exception: *Ae. albopictus* peak score, p = 0.004). AUC values are stable across the three season-length thresholds, supporting the robustness of the result.
+
+Season length is the strongest discriminator in this validation. AUC values above 0.70 are generally considered acceptable discrimination in applied settings, though the threshold is context-dependent. Ecological niche models typically produce lower AUC values than models with clean, confirmed absence data, partly because absence labels in sparse global datasets often reflect surveillance gaps rather than confirmed biological absence.
+
+**Important caveat:** Absence-labelled here means no Kraemer point record within 50 km — not confirmed biological absence. Presence rates are low (5.0% for *Ae. aegypti*, 1.6% for *Ae. albopictus*), which mainly reflects the geographic unevenness of the Kraemer validation layer rather than model failure. Many cities in Southeast Asia and Africa carry no Kraemer record despite likely presence. Results should be interpreted as discrimination against a noisy background, not as definitive ecological validation.
+
+Full analysis: [`methodology_and_validation.ipynb`](notebooks/methodology_and_validation.ipynb)
+
 The photoperiod thresholds used here are independently corroborated by the Copernicus Climate Change Service (C3S) dataset on climatic suitability for *Ae. albopictus* in Europe (C3S, 2019). That dataset implements the seasonal activity model of Medlock et al. (2006), which defines egg hatching in spring as requiring photoperiod > 11.25h and autumn diapause onset when photoperiod drops below 13.5h, identical to the `PHOTO_LOW` and `PHOTO_HIGH` thresholds applied here. Both thresholds originate from Lacour et al. (2015), who established the critical photoperiod (CPP) for diapause induction in a French Mediterranean *Ae. albopictus* population at 13.5h, and identified 11.25h as the minimum photoperiod required for spring egg hatching onset. The C3S model is restricted to Europe and based on climate projections (RCP4.5/8.5). Here we extend a comparable approach globally using ERA5 historical climate normals. This treatment of daylength as a seasonal constraint on activity outside the tropics is further supported by Bonizzoni et al. (2013), who document rapid adaptive evolution of critical photoperiod in temperate Ae. albopictus populations as a key driver of the species' range expansion into higher latitudes.
 
 ## Confirmed distribution in Europe
@@ -171,7 +204,7 @@ across the continent (Simonin 2025).
 - **Spatial resolution:** Suitability is modelled for individual cities, not across continuous space. This makes exposed-population estimates methodologically unsound at the city level. Meaningful exposure analysis would require gridded population data (e.g. GHS-POP) combined with spatially continuous suitability fields, which lies beyond the scope of the current dataset.
 - **Suitability scores reflect climate conditions, not confirmed presence.** Thermal and humidity constraints are captured, but biotic factors such as prior establishment, competitive dynamics, or human-mediated introduction are not. Where temperatures approach the lower thermal threshold, occurrence records can diverge substantially from climate predictions, as documented for example in Mexico City (~2,242 m), where *Ae. aegypti* persists despite conditions near its thermal minimum (Doeurk et al. 2025; Lozano-Fuentes et al. 2012; Dávalos-Becerril et al. 2019; Ortega-Morales et al. 2022).
 - **Photoperiod (albopictus):** A binary cutoff at |lat| ≥ 23.5° currently separates tropical from temperate photoperiod conditions. A continuous gradation based on latitude could better capture the transition zone between the two.
-- **Presence data:** A future version could overlay occurrence records from sources such as Kraemer et al. 2015, the Mosquito Alert citizen science platform, or the VectorMap database (Laporta et al. 2023) to distinguish climate suitability from confirmed presence.
+- **Presence data:** Suitability scores have been validated against geo-positioned occurrence records from Kraemer et al. 2015 (see Model Validation above). Further comparison against the Mosquito Alert citizen science platform or the VectorMap database (Laporta et al. 2023) could extend coverage, particularly for post-2014 records.
 - **Virus-specific transmission modelling:** This work models general climate suitability for mosquito activity. A natural extension would be to incorporate virus-specific temperature–trait relationships (EIP, vector competence) to estimate transmission risk for specific arboviruses, as demonstrated for CHIKV by Tegar et al. (2026) and for dengue/Zika by Mordecai et al. (2017).
 - **From suitability to outbreak forecasting:** A further extension would integrate confirmed case data to build a predictive layer on top of suitability scores, an approach demonstrated at country level by Sebastianelli et al. (2024) for dengue in Brazil and Peru ([ESA-PhiLab/ESA-UNICEF_DengueForecastProject](https://github.com/ESA-PhiLab/ESA-UNICEF_DengueForecastProject)).
 
