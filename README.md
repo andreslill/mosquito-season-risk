@@ -161,7 +161,7 @@ To test whether the suitability model assigns higher scores to cities with confi
 
 Cities near confirmed occurrence records showed systematically higher suitability scores than absence-labelled cities across both species. Season length was the strongest discriminator, with AUC values between 0.72 and 0.83 depending on species and threshold. Results were stable across matching radii from 25 to 150 km, supporting the robustness of the model.
 
-Because Kraemer is a presence only dataset with uneven geographic coverage, this should be interpreted as relative validation rather than proof of true absence. Full methodology and validation code: `notebooks/methodology_and_validation.ipynb`
+Because Kraemer is a presence only dataset with uneven geographic coverage, this should be interpreted as relative validation rather than proof of true absence. Full methodology and validation code: `notebooks/validation_kreamer.ipynb`
 
 ### Photoperiod parameter validation
 
