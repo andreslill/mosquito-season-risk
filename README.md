@@ -157,9 +157,9 @@ One limitation worth noting: the temperature optimum used here (Topt = 24.5°C) 
 
 ### External validation against Kraemer et al. 2015/2017 occurrence records
 
-To test whether the suitability model assigns higher scores to cities with confirmed mosquito presence, suitability metrics were compared against geo-positioned occurrence records from Kraemer et al. 2015/2017 a global compendium of 42,066 *Ae. aegypti* and *Ae. albopictus* records compiled from peer-reviewed literature and national entomological surveys between 1958 and 2014.
+To test whether the suitability model assigns higher scores to cities with confirmed mosquito presence, suitability metrics were compared against occurrence records from Kraemer et al. 2015/2017 a global compendium of 42,066 *Ae. aegypti* and *Ae. albopictus* records compiled from peer-reviewed literature and national entomological surveys between 1958 and 2014.
 
-For each of the 1,421 cities, a presence label was assigned if any Kraemer point record fell within 50 km (point records only; polygon centroids excluded). Three city-level metrics were compared between presence-labelled and absence-labelled cities: peak monthly suitability, season length at three thresholds matching the dashboard filter options (≥ 0.2, ≥ 0.3, ≥ 0.4), and mean suitability across active months.
+"For each of the 1,421 cities, a presence label was assigned if any point-level record fell within 50 km, excluding polygon centroids to ensure spatial precision. Three city-level metrics were compared between presence-labelled and absence-labelled cities: peak monthly suitability, season length at three thresholds matching the dashboard filter options (≥ 0.2, ≥ 0.3, ≥ 0.4), and mean suitability across active months.
 
 **Results (50 km radius, point records only):**
 
@@ -180,7 +180,7 @@ All Mann-Whitney U tests: p < 0.001 (exception: *Ae. albopictus* peak score, p =
 
 Season length is the strongest discriminator in this validation. AUC values above 0.70 are generally considered acceptable discrimination in applied settings, though the threshold is context-dependent. Ecological niche models typically produce lower AUC values than models with clean, confirmed absence data, partly because absence labels in sparse global datasets often reflect surveillance gaps rather than confirmed biological absence.
 
-**Important caveat:** Absence-labelled here means no Kraemer point record within 50 km — not confirmed biological absence. Presence rates are low (5.0% for *Ae. aegypti*, 1.6% for *Ae. albopictus*), which mainly reflects the geographic unevenness of the Kraemer validation layer rather than model failure. Many cities in Southeast Asia and Africa carry no Kraemer record despite likely presence. Results should be interpreted as discrimination against a noisy background, not as definitive ecological validation.
+**Important caveat:** Absence-labelled here means no Kraemer point record within 50 km, not confirmed biological absence. Presence rates are low (5.0% for *Ae. aegypti*, 1.6% for *Ae. albopictus*), which mainly reflects the geographic unevenness of the Kraemer validation layer rather than model failure. Many cities in Southeast Asia and Africa carry no Kraemer record despite likely presence. Results should be interpreted as discrimination against a noisy background, not as definitive ecological validation.
 
 Full methodology and validation code: `notebooks/methodology_and_validation.ipynb`
 
