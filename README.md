@@ -155,34 +155,13 @@ Notably, Tegar et al. estimate a minimum cut-off temperature for CHIKV transmiss
 
 One limitation worth noting: the temperature optimum used here (Topt = 24.5°C) is derived from *female survival* in Doeurk et al. 2025, a single life-history trait. Tegar et al. find an optimum for CHIKV transmission of 25.63°C, integrating multiple traits (EIP, vector competence, biting rate, survival) into a full R₀ model. Doeurk et al. also report that blood-feeding rates in *Ae. albopictus* peak at 25°C, slightly above the survival optimum. This suggests the suitability curve used here may be marginally conservative around the peak, as it does not integrate biting rate or transmission competence. A multi-trait Topt closer to 25–26°C could be more appropriate for a transmission-oriented model.
 
-### Validation against Kraemer et al. 2015/2017 occurrence records
+### Validation against Kraemer et al. occurrence records
 
-To test whether the suitability model assigns higher scores to cities with confirmed mosquito presence, suitability metrics were compared against occurrence records from Kraemer et al. 2015/2017 a global compendium of 42,066 *Ae. aegypti* and *Ae. albopictus* records compiled from peer-reviewed literature and national entomological surveys between 1958 and 2014.
+To test whether the suitability model assigns higher scores to cities with confirmed mosquito presence, suitability metrics were compared against occurrence records from Kraemer et al. 2015,2017, a global compendium of 42,066 *Ae. aegypti* and *Ae. albopictus* records compiled from peer reviewed literature and national entomological surveys between 1958 and 2014. For each city, a presence label was assigned where at least one point record fell within 50 km.
 
-"For each of the 1,421 cities, a presence label was assigned if any point-level record fell within 50 km, excluding polygon centroids to ensure spatial precision. Three city-level metrics were compared between presence-labelled and absence-labelled cities: peak monthly suitability, season length at three thresholds matching the dashboard filter options (≥ 0.2, ≥ 0.3, ≥ 0.4), and mean suitability across active months.
+Cities near confirmed occurrence records showed systematically higher suitability scores than absence-labelled cities across both species. Season length was the strongest discriminator, with AUC values between 0.72 and 0.83 depending on species and threshold. Results were stable across matching radii from 25 to 150 km, supporting the robustness of the model.
 
-**Results (50 km radius, point records only):**
-
-| Species | Metric | Presence median | Absence-labelled median | AUC |
-|---|---|---|---|---|
-| *Ae. aegypti* | Season length (≥ 0.2) | 12 months | 6 months | **0.834** |
-| *Ae. aegypti* | Season length (≥ 0.3) | 12 months | 5 months | 0.827 |
-| *Ae. aegypti* | Season length (≥ 0.4) | 12 months | 5 months | 0.815 |
-| *Ae. aegypti* | Mean active score | 0.758 | 0.627 | 0.715 |
-| *Ae. aegypti* | Peak score | 0.970 | 0.873 | 0.688 |
-| *Ae. albopictus* | Season length (≥ 0.2) | 12 months | 6 months | **0.749** |
-| *Ae. albopictus* | Season length (≥ 0.4) | 12 months | 4 months | 0.737 |
-| *Ae. albopictus* | Season length (≥ 0.3) | 12 months | 5 months | 0.724 |
-| *Ae. albopictus* | Mean active score | 0.734 | 0.589 | 0.682 |
-| *Ae. albopictus* | Peak score | 0.941 | 0.867 | 0.660 |
-
-All Mann-Whitney U tests: p < 0.001 (exception: *Ae. albopictus* peak score, p = 0.004). AUC values are stable across the three season-length thresholds, supporting the robustness of the result.
-
-Season length is the strongest discriminator in this validation. AUC values above 0.70 are generally considered acceptable discrimination in applied settings, though the threshold is context-dependent. Ecological niche models typically produce lower AUC values than models with clean, confirmed absence data, partly because absence labels in sparse global datasets often reflect surveillance gaps rather than confirmed biological absence.
-
-**Important caveat:** Absence-labelled here means no Kraemer point record within 50 km, not confirmed biological absence. Presence rates are low (5.0% for *Ae. aegypti*, 1.6% for *Ae. albopictus*), which mainly reflects the geographic unevenness of the Kraemer validation layer rather than model failure. Many cities in Southeast Asia and Africa carry no Kraemer record despite likely presence. Results should be interpreted as discrimination against a noisy background, not as definitive ecological validation.
-
-Full methodology and validation code: `notebooks/methodology_and_validation.ipynb`
+Because Kraemer is a presence only dataset with uneven geographic coverage, this should be interpreted as relative validation rather than proof of true absence. Full methodology and validation code: `notebooks/methodology_and_validation.ipynb`
 
 ### Photoperiod parameter validation
 
