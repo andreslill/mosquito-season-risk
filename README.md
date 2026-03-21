@@ -155,7 +155,7 @@ Notably, Tegar et al. estimate a minimum cut-off temperature for CHIKV transmiss
 
 One limitation worth noting: the temperature optimum used here (Topt = 24.5°C) is derived from *female survival* in Doeurk et al. 2025, a single life-history trait. Tegar et al. find an optimum for CHIKV transmission of 25.63°C, integrating multiple traits (EIP, vector competence, biting rate, survival) into a full R₀ model. Doeurk et al. also report that blood-feeding rates in *Ae. albopictus* peak at 25°C, slightly above the survival optimum. This suggests the suitability curve used here may be marginally conservative around the peak, as it does not integrate biting rate or transmission competence. A multi-trait Topt closer to 25–26°C could be more appropriate for a transmission-oriented model.
 
-### External validation against Kraemer et al. 2015/2017 occurrence records
+### Validation against Kraemer et al. 2015/2017 occurrence records
 
 To test whether the suitability model assigns higher scores to cities with confirmed mosquito presence, suitability metrics were compared against occurrence records from Kraemer et al. 2015/2017 a global compendium of 42,066 *Ae. aegypti* and *Ae. albopictus* records compiled from peer-reviewed literature and national entomological surveys between 1958 and 2014.
 
