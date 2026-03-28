@@ -91,7 +91,7 @@ Outside the tropics (Medlock et al. 2006; Lacour et al. 2015):
 - 11.25–13.5h → 0.5
 - ≥ 13.5h → 1.0
 
-In temperate cities, midsummer suitability for *Ae. albopictus* can drop below the season threshold even while temperatures remain high. This reflects two interacting processes: daylength falling below the diapause photoperiod threshold (≈ 13.5 h, Lacour et al. 2015) and increased desiccation stress under high VPD. Consequently, in some cities (e.g. Murcia, Athens or Damascus), September can show higher suitability than August, as slightly cooler temperatures nearer the temperature optimum (24.5°C) and recovering humidity together restore conditions above the season threshold.
+In temperate cities, midsummer suitability for *Ae. albopictus* can drop below the season threshold even while temperatures remain high. This reflects two interacting processes: daylength falling below the diapause photoperiod threshold (≈ 13.5 h, Lacour et al. 2015) during late summer, and increased desiccation stress under high VPD. Consequently, in some cities (e.g. Murcia, Athens or Damascus), September can show higher suitability than August, as slightly cooler temperatures nearer the temperature optimum (24.5°C) and recovering humidity together restore conditions above the season threshold.
 
 ### Precipitation
 Precipitation is included as contextual information only and does not contribute to the suitability score. The score is based on temperature suitability and vapour pressure deficit, with an additional photoperiod factor for *Ae. albopictus* outside the tropics.
