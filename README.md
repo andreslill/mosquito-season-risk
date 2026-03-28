@@ -90,8 +90,6 @@ Outside the tropics (Medlock et al. 2006; Lacour et al. 2015):
 - 11.25–13.5h → 0.5
 - ≥ 13.5h → 1.0
 
-### Midsummer suitability dips (*Ae. albopictus*)
-
 In temperate cities, midsummer suitability for *Ae. albopictus* can drop below the season threshold even while temperatures remain high. This reflects two interacting processes: daylength falling below the diapause photoperiod threshold (≈ 13.5 h, Lacour et al. 2015) and increased desiccation stress under high VPD. Consequently, in some cities (e.g. Murcia, Athens or Damascus), September can show higher suitability than August, as slightly cooler temperatures nearer the temperature optimum (24.5°C) and recovering humidity together restore conditions above the season threshold.
 
 ### Precipitation
@@ -167,7 +165,7 @@ To test whether the suitability model assigns higher scores to cities with confi
 
 Cities near confirmed occurrence records showed systematically higher suitability scores than absence-labelled cities across both species. Season length was the strongest discriminator, with AUC values between 0.72 and 0.83 depending on species and threshold. Results were stable across matching radii from 25 to 150 km, supporting the robustness of the model.
 
-Because Kraemer is a presence only dataset with uneven geographic coverage, this should be interpreted as relative validation rather than proof of true absence. Full methodology and validation code: `notebooks/validation_kraemer.ipynb`
+Because Kraemer is a presence only dataset with uneven geographic coverage, this should be interpreted as relative validation rather than proof of true absence. Full methodology and validation code: `notebooks/methodology_and_validation.ipynb`
 
 ### Photoperiod parameter validation
 
