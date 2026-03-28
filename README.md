@@ -3,6 +3,10 @@
 
 > **Tableau Public dashboard** · **ERA5 climate data** · **1991–2020 climate normals**
 
+[![Dashboard](https://img.shields.io/badge/dashboard-Tableau%20Public-orange.svg)](https://public.tableau.com/app/profile/andr.s.lill8311/viz/Whenismosquitoseasoninyourcity/Dashboard)
+[![Data](https://img.shields.io/badge/data-ERA5%20%2B%20Kraemer-green.svg)](./data)
+[![Notebook](https://img.shields.io/badge/notebook-validation-blueviolet.svg)](./notebooks/methodology_and_validation.ipynb)
+
 ---
 
 ## Overview
