@@ -15,8 +15,6 @@ In 2025, Europe recorded simultaneous locally acquired dengue, chikungunya, and 
 
 ## Overview
 
-1,421 cities × 12 months × 2 species = 34,104 monthly suitability estimates.
-
 Which months are most suitable for mosquito activity, given a city's typical climate? Here we model climate-based suitability for *Ae. aegypti* and *Ae. albopictus* across cities with populations ≥ 500,000.
 
 **Important:** Scores represent *climate suitability only*, not confirmed mosquito presence, disease risk, or actual population abundance. City level elevation is included as contextual information. Elevation differences within cities, microclimates, urban heat islands, and local habitat availability are not captured.
