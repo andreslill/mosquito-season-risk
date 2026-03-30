@@ -62,7 +62,7 @@ Suitability is a multiplicative score (0–1):
 Suitability Score (aegypti)    = TempScore × VPDScore
 Suitability Score (albopictus) = TempScore × VPDScore × PhotoFactor*
 
-*PhotoFactor applied only outside the tropics (|lat| ≥ 23.5°)
+*PhotoFactor: sigmoid transition centered at the tropics boundary (23.5°, k = 0.5)
 ```
 
 ### Temperature suitability (TempScore)
@@ -84,12 +84,11 @@ Linearized vapour pressure deficit (VPD) suitability based on Schmidt et al. 201
 VPD is derived from ERA5 temperature and dewpoint using the Magnus approximation.
 
 ### Photoperiod (PhotoFactor • *Ae. albopictus* only)
-Applied **only outside the tropics (|lat| ≥ 23.5°)** as a proxy for diapause pressure. In tropical/subtropical latitudes, daylength is less seasonal and diapause is not a dominant driver, so PhotoFactor = 1.0 there.
+A sigmoid function (inflection = 23.5°, k = 0.5) weights the Lacour et al. 2015 photoperiod thresholds (11.25 h / 13.5 h) continuously by latitude, producing a 
+~5° transition zone around the Tropic of Cancer/Capricorn. PhotoFactor approaches 1.0 near the equator and 0.0 at high latitudes in winter.
 
-Outside the tropics (Medlock et al. 2006; Lacour et al. 2015):
-- Daylength < 11.25h → 0.0
-- 11.25–13.5h → 0.5
-- ≥ 13.5h → 1.0
+**Sensitivity analysis:** A latitudinal sensitivity check confirmed that 294 cities across 28 countries showed photo factor changes > 0.1 under the sigmoid vs. a binary 
+cutoff, including cities in the Dengue analysis focus countries Taiwan and Mexico. The sigmoid implementation was selected on this basis.
 
 In temperate cities, midsummer suitability for *Ae. albopictus* can drop below the season threshold even while temperatures remain high. This reflects two interacting processes: daylength falling below the diapause photoperiod threshold (≈ 13.5 h, Lacour et al. 2015) during late summer, and increased desiccation stress under high VPD. Consequently, in some cities (e.g. Murcia, Athens or Damascus), September can show higher suitability than August, as slightly cooler temperatures nearer the temperature optimum (24.5°C) and recovering humidity together restore conditions above the season threshold.
 
@@ -120,6 +119,8 @@ Precipitation is included as contextual information only and does not contribute
 ## Repository Structure
 
 ```
+├── analysis/
+│   └── photoperiod_sensitivity_check.py      # Sigmoid vs. binary cutoff sensitivity check
 ├── data/
 │   └── mosquito_suitability.csv              # Pre-computed dataset (1,421 cities × 12 months)
 │   └── kraemer_occurrences.csv               # Pre-processed from Kraemer et al. (2015); used for validation
@@ -172,9 +173,9 @@ Cities near confirmed occurrence records showed systematically higher suitabilit
 | *Ae. aegypti* | Season length (≥ 0.2) | 12 months | 6 months | **0.834** |
 | *Ae. aegypti* | Season length (≥ 0.3) | 12 months | 5 months | 0.827 |
 | *Ae. aegypti* | Season length (≥ 0.4) | 12 months | 5 months | 0.815 |
-| *Ae. albopictus* | Season length (≥ 0.2) | 12 months | 6 months | **0.749** |
-| *Ae. albopictus* | Season length (≥ 0.3) | 12 months | 5 months | 0.724 |
-| *Ae. albopictus* | Season length (≥ 0.4) | 12 months | 4 months | 0.737 |
+| *Ae. albopictus* | Season length (≥ 0.2) | 12 months | 6 months | **0.743** |
+| *Ae. albopictus* | Season length (≥ 0.3) | 12 months | 5 months | 0.730 |
+| *Ae. albopictus* | Season length (≥ 0.4) | 12 months | 4 months | 0.747 |
 
 All Mann-Whitney U tests: p < 0.001.
 
@@ -204,9 +205,7 @@ across the continent (Simonin 2025).
   Smaller cities with known vector presence, such as Funchal (Madeira, *Ae. aegypti*), are not represented.
 - **Spatial resolution:** Suitability is modelled for individual cities, not across continuous space. This makes exposed-population estimates methodologically unsound at the city level. Meaningful exposure analysis would require gridded population data (e.g. GHS-POP) combined with spatially continuous suitability fields, which lies beyond the scope of the current dataset.
 - **Suitability scores reflect climate conditions, not confirmed presence.** Thermal and humidity constraints are captured, but biotic factors such as prior establishment, competitive dynamics, or human-mediated introduction are not. Where temperatures approach the lower thermal threshold, occurrence records can diverge substantially from climate predictions, as documented for example in Mexico City (~2,242 m), where *Ae. aegypti* persists despite conditions near its thermal minimum (Doeurk et al. 2025; Lozano-Fuentes et al. 2012; Dávalos-Becerril et al. 2019; Ortega-Morales et al. 2022).
-- **Photoperiod (albopictus):** A binary cutoff at |lat| ≥ 23.5° currently separates tropical from temperate photoperiod conditions. The 23.5° boundary follows the standard geographical definition of the tropics (Tropic of Capricorn/Cancer) and serves as a proxy for applying the photoperiod thresholds from Medlock et al. (2006) and Lacour et al. (2015), which were derived from temperate populations. It is not a biologically derived threshold.
-
-  This creates edge cases near the boundary: São Paulo (23.55°S) sits just outside the tropics and triggers a photoperiod-driven reduction in suitability during the southern winter, while Rio de Janeiro (22.9°S), just 0.65° of latitude to the north, is treated as fully tropical with a constant `PhotoFactor` of 1.0. A continuous sigmoid function based on latitude would better represent the biological transition zone and avoid the abrupt transition between tropical and temperate diapause behaviour.
+- **Photoperiod (albopictus):** The binary |lat| ≥ 23.5° cutoff has been replaced with a sigmoid transition (inflection = 23.5°, k = 0.5), eliminating edge-case artefacts near the tropics boundary (e.g. São Paulo vs. Rio de Janeiro). The inflection point follows the astronomical tropics boundary. The sigmoid produces a ~5° transition zone. The parameters used are not empirically derived from field data and remain a modelling assumption.
 - **Presence data:** Suitability scores have been validated against occurrence records from Kraemer et al. (2015) (see Model Validation above). Further comparison against the Mosquito Alert citizen science platform or the VectorMap database (Laporta et al. 2023) could extend coverage, particularly for post-2014 records.
 - **Virus-specific transmission modelling:** This work models general climate suitability for mosquito activity. A natural extension would be to incorporate virus-specific temperature–trait relationships (EIP, vector competence) to estimate transmission risk for specific arboviruses, as demonstrated for CHIKV by Tegar et al. (2026) and for dengue/Zika by Mordecai et al. (2017).
 - **From suitability to outbreak forecasting:** A further extension would integrate confirmed case data to build a predictive layer on top of suitability scores, an approach demonstrated at country level by Sebastianelli et al. (2024) for dengue in Brazil and Peru ([ESA-PhiLab/ESA-UNICEF_DengueForecastProject](https://github.com/ESA-PhiLab/ESA-UNICEF_DengueForecastProject)).
