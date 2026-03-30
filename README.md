@@ -93,10 +93,7 @@ cutoff, including cities in the Dengue analysis focus countries Taiwan and Mexic
 In temperate cities, midsummer suitability for *Ae. albopictus* can drop below the season threshold even while temperatures remain high. This reflects two interacting processes: daylength falling below the diapause photoperiod threshold (≈ 13.5 h, Lacour et al. 2015) during late summer, and increased desiccation stress under high VPD. Consequently, in some cities (e.g. Murcia, Athens or Damascus), September can show higher suitability than August, as slightly cooler temperatures nearer the temperature optimum (24.5°C) and recovering humidity together restore conditions above the season threshold.
 
 ### Precipitation
-Precipitation is included as contextual information only and does not contribute to the suitability score. The score is based on temperature suitability and VPD, with an additional photoperiod factor for *Ae. albopictus* outside the tropics.
-
-Desiccation stress is captured indirectly via VPD, which measures atmospheric moisture deficit and directly affects adult survival. Breeding-site availability, driven by standing water from precipitation, is not modelled. In dense urban environments this limitation is partially mitigated: *Ae. aegypti* is a container breeder and urban 
-populations rely substantially on anthropogenic water sources (flowerpots, construction sites, air-conditioning condensate), partially decoupling breeding-site availability from natural precipitation cycles. A non-linear precipitation term accounting for both drought stress and larval flushing at high rainfall remains a natural model extension.
+Precipitation is shown as contextual information only and does not contribute to the suitability score. The model is based on temperature suitability and VPD, with an additional photoperiod factor for Ae. albopictus at higher latitudes. While precipitation can affect breeding-site availability, this is not modelled here. Both *Ae. aegypti* and *Ae. albopictus* are container breeders and urban populations often rely on anthropogenic water sources, such as flowerpots, construction sites, air-conditioning condensate. A non-linear precipitation term could be added in future work to capture both drought stress and larval flushing at high rainfall.
 
 ---
 
