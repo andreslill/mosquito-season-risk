@@ -30,7 +30,7 @@ Which months are most suitable for mosquito activity, given a city's typical cli
 
 ## Species
 
-*Ae. aegypti* and *Ae. albopictus* are the most epidemiologically important mosquito vectors of human arboviral diseases globally (Mordecai et al. 2017). Together, they drive transmission of dengue, Zika, chikungunya, and urban yellow fever. *Ae. aegypti* is predominantly tropical and subtropical; Ae. albopictus tolerates cooler conditions and has expanded rapidly into temperate regions, including Europe (Bonizzoni et al. 2013; Simonin 2025), with climate projections suggesting further northward expansion by mid-century (Laporta et al. 2023).
+*Ae. aegypti* and *Ae. albopictus* are the most epidemiologically important mosquito vectors of human arboviral diseases globally (Mordecai et al. 2017). Together, they drive transmission of dengue, Zika, chikungunya, and urban yellow fever. *Ae. aegypti* is predominantly tropical and subtropical. *Ae. albopictus* tolerates cooler conditions and has expanded rapidly into temperate regions, including Europe (Bonizzoni et al. 2013; Simonin 2025), with climate projections suggesting further northward expansion by mid-century (Laporta et al. 2023).
 
 ---
 
