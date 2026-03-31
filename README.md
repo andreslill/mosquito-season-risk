@@ -101,6 +101,8 @@ Precipitation is shown as contextual information only and does not contribute to
 ```
 ├── analysis/
 │   └── photoperiod_sensitivity_check.py      # Sigmoid vs. binary cutoff sensitivity check
+├── assets/
+│   └── dashboard_screenshot.png  
 ├── data/
 │   └── mosquito_suitability.csv              # Pre-computed dataset (1,421 cities × 12 months)
 │   └── kraemer_occurrences.csv               # Pre-processed from Kraemer et al. (2015); used for validation
