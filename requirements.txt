@@ -13,3 +13,11 @@ netCDF4>=1.6.0
 
 # Progress bar
 tqdm>=4.65.0
+
+# Analysis & validation
+scipy>=1.11.0
+scikit-learn>=1.3.0
+
+# Visualisation
+matplotlib>=3.7.0
+seaborn>=0.13.0
