@@ -166,7 +166,7 @@ Full methodology and validation code: `notebooks/methodology_and_validation.ipyn
 
 ### Photoperiod parameter validation
 
-The photoperiod thresholds used here are independently corroborated by the Copernicus Climate Change Service (C3S) dataset on climatic suitability for *Ae. albopictus* in Europe (C3S, 2019). That dataset implements the seasonal activity model of Medlock et al. (2006), which defines egg hatching in spring as requiring photoperiod > 11.25h and autumn diapause onset when photoperiod drops below 13.5h, identical to the `PHOTO_LOW` and `PHOTO_HIGH` thresholds applied here. Both thresholds originate from Lacour et al. (2015), who established the critical photoperiod (CPP) for diapause induction in a French Mediterranean *Ae. albopictus* population at 13.5h, and identified 11.25h as the minimum photoperiod required for spring egg hatching onset. The C3S model is restricted to Europe and based on climate projections (RCP4.5/8.5). Here we extend a comparable approach globally using ERA5 historical climate normals. This treatment of daylength as a seasonal constraint on activity outside the tropics is further supported by Bonizzoni et al. (2013), who document rapid adaptive evolution of critical photoperiod in temperate Ae. albopictus populations as a key driver of the species' range expansion into higher latitudes.
+The photoperiod thresholds used here are independently corroborated by the Copernicus Climate Change Service (C3S) dataset on climatic suitability for *Ae. albopictus* in Europe (C3S, 2019). That dataset implements the seasonal activity model of Medlock et al. (2006), which defines egg hatching in spring as requiring photoperiod > 11.25h and autumn diapause onset when photoperiod drops below 13.5h, identical to the `PHOTO_LOW` and `PHOTO_HIGH` thresholds applied here. Both thresholds originate from Lacour et al. (2015), who established the critical photoperiod (CPP) for diapause induction in a French Mediterranean *Ae. albopictus* population at 13.5h, and identified 11.25h as the minimum photoperiod required for spring egg hatching onset. The C3S model is restricted to Europe and based on climate projections (RCP4.5/8.5). Here we extend a comparable approach globally using ERA5 historical climate normals. This treatment of daylength as a seasonal constraint on activity outside the tropics is further supported by Bonizzoni et al. (2013), who document rapid adaptive evolution of critical photoperiod in temperate *Ae. albopictus* populations as a key driver of the species' range expansion into higher latitudes. The same thresholds are applied by Petrić et al. (2021), who implemented the Medlock et al. (2006) framework on ERA5 Land data across Europe and validated against VectorNet presence data.
 
 ## Confirmed distribution in Europe
 
@@ -219,6 +219,8 @@ across the continent (Simonin 2025).
 
 >Pareto Software, LLC. 2024. SimpleMaps World Cities Database, Basic v1.901.
 https://simplemaps.com/data/world-cities. CC BY 4.0.
+
+>Petrić M, et al. Seasonality and timing of peak abundance of Aedes albopictus in Europe: Implications to public and animal health. Geospatial Health 2021; 16:996. https://doi.org/10.4081/gh.2021.996
 
 >Schmidt CA, et al. Effects of desiccation stress on adult female longevity in *Ae. aegypti* and *Ae. albopictus*. Parasites & Vectors 2018; 11:267. https://doi.org/10.1186/s13071-018-2808-6
 
