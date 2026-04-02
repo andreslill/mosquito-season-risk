@@ -1,4 +1,4 @@
-no# When is mosquito season in your city?
+# When is mosquito season in your city?
 ### Climate suitability for *Ae. aegypti* and *Ae. albopictus* across 1,421 cities worldwide
 
 > **Tableau Public dashboard** · **ERA5 climate data** · **1991–2020 climate normals**
