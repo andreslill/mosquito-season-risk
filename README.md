@@ -176,7 +176,7 @@ ECDC surveillance ([June 2025](https://www.ecdc.europa.eu/en/publications-data/a
 
 *Ae. albopictus*, by contrast, is established in 369 regions across countries within the EU, including Germany ([ECDC, June 2025](https://www.ecdc.europa.eu/en/publications-data/aedes-albopictus-current-known-distribution-june-2025)), consistent with the broader suitability windows modelled here. The year 2025 marked an 
 unprecedented level of arboviral circulation in Europe, with locally acquired 
-cases of CHIKV, dengue, and West Nile virus recorded simultaneously 
+cases of chikungunya, dengue, and West Nile virus recorded simultaneously 
 across the continent (Simonin 2025).
 
 ---
