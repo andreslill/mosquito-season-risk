@@ -25,7 +25,7 @@ Which months are most suitable for mosquito activity, given a city's typical cli
 ## Dashboard Preview
 
 [![Dashboard screenshot showing seasonal suitability for Mexico City, Ae. albopictus](./assets/dashboard_screenshot.png)](https://public.tableau.com/app/profile/andr.s.lill8311/viz/Whenismosquitoseasoninyourcity/Dashboard?publish=yes)
-*Screenshot of the Tableau Public dashboard showing Mexico City (Ae. albopictus, Moderate threshold). Select any city and species to explore seasonal suitability, climate drivers, and regional comparisons.*
+*Screenshot of the Tableau Public dashboard showing Mexico City (Ae. albopictus, Moderate threshold). Select any city and species to explore seasonal suitability, and regional comparisons.*
 
 ---
 
